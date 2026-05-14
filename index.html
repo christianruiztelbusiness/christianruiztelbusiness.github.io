@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Christian Ruiz Tellechea | Portafolio</title>
+  <meta name="description" content="Portafolio de Christian Ruiz Tellechea: proyectos personales, desarrollo web, experiencia técnica y contacto profesional." />
+  <meta name="author" content="Christian Ruiz Tellechea" />
+  <meta property="og:title" content="Christian Ruiz Tellechea | Portafolio" />
+  <meta property="og:description" content="Proyectos personales, desarrollo web y perfil profesional." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://christianruiztel.com" />
+  <link rel="canonical" href="https://christianruiztel.com" />
+  <style>
+    :root {
+      --bg: #0b1020;
+      --card: rgba(255, 255, 255, 0.07);
+      --card-strong: rgba(255, 255, 255, 0.12);
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --subtle: #94a3b8;
+      --accent: #38bdf8;
+      --accent-2: #a78bfa;
+      --border: rgba(255, 255, 255, 0.14);
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+      --radius: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.22), transparent 36rem),
+        radial-gradient(circle at top right, rgba(167, 139, 250, 0.20), transparent 34rem),
+        var(--bg);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(18px);
+      background: rgba(11, 16, 32, 0.72);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .hero {
+      padding: 88px 0 48px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.82rem;
+      margin-bottom: 16px;
+    }
+
+    h1, h2, h3, p {
+      margin-top: 0;
+    }
+
+    h1 {
+      font-size: clamp(2.6rem, 7vw, 5.4rem);
+      line-height: 0.95;
+      letter-spacing: -0.075em;
+      margin-bottom: 22px;
+    }
+
+    h2 {
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      line-height: 1.05;
+      letter-spacing: -0.05em;
+      margin-bottom: 16px;
+    }
+
+    h3 {
+      font-size: 1.15rem;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      max-width: 680px;
+      margin-bottom: 28px;
+    }
+
+    .hero-card, .card, .project {
+      background: linear-gradient(180deg, var(--card-strong), var(--card));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card {
+      padding: 28px;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 24px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      background: #22c55e;
+      border-radius: 999px;
+      box-shadow: 0 0 24px #22c55e;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 16px;
+      border-radius: 999px;
+      font-weight: 700;
+      border: 1px solid var(--border);
+      transition: transform 160ms ease, background 160ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #06101f;
+      border-color: transparent;
+    }
+
+    .secondary {
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text);
+    }
+
+    section {
+      padding: 56px 0;
+    }
+
+    .section-intro {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: end;
+      margin-bottom: 24px;
+    }
+
+    .section-intro p {
+      color: var(--subtle);
+      max-width: 560px;
+      margin-bottom: 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card, .project {
+      padding: 22px;
+    }
+
+    .card p, .project p {
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 16px 0 18px;
+    }
+
+    .tag {
+      padding: 6px 10px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 0.84rem;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .project-links {
+      display: flex;
+      gap: 12px;
+      margin-top: 18px;
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 18px;
+    }
+
+    .list {
+      display: grid;
+      gap: 10px;
+      color: var(--muted);
+      padding-left: 0;
+      list-style: none;
+      margin: 0;
+    }
+
+    .list li {
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    footer {
+      padding: 40px 0 56px;
+      color: var(--subtle);
+      border-top: 1px solid var(--border);
+      margin-top: 40px;
+    }
+
+    @media (max-width: 860px) {
+      .hero, .about, .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-intro {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav aria-label="Navegación principal">
+        <a class="brand" href="#top">Christian Ruiz Tellechea</a>
+        <div class="nav-links">
+          <a href="#proyectos">Proyectos</a>
+          <a href="#habilidades">Habilidades</a>
+          <a href="#sobre-mi">Sobre mí</a>
+          <a href="#contacto">Contacto</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="container hero">
+      <div>
+        <p class="eyebrow">Portafolio de proyectos personales</p>
+        <h1>Construyo proyectos web claros, útiles y bien presentados.</h1>
+        <p class="lead">
+          Soy Christian Ruiz Tellechea. Este sitio reúne mis proyectos, habilidades técnicas
+          y formas de contacto para reclutadores, equipos y colaboradores.
+        </p>
+        <div class="buttons">
+          <a class="button primary" href="#proyectos">Ver proyectos</a>
+          <a class="button secondary" href="mailto:christianruiztel@gmail.com">Contactarme</a>
+        </div>
+      </div>
+
+      <aside class="hero-card" aria-label="Resumen profesional">
+        <div class="status"><span class="dot"></span>Disponible para oportunidades</div>
+        <h2>Perfil rápido</h2>
+        <p class="lead" style="font-size: 1rem; margin-bottom: 20px;">
+          Desarrollo web, lógica de producto y aprendizaje constante. Me interesa crear soluciones
+          que sean simples de usar, mantenibles y visualmente profesionales.
+        </p>
+        <div class="tags">
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">GitHub</span>
+          <span class="tag">Frontend</span>
+        </div>
+      </aside>
+    </section>
+
+    <section id="proyectos" class="container">
+      <div class="section-intro">
+        <div>
+          <p class="eyebrow">Trabajo destacado</p>
+          <h2>Proyectos personales</h2>
+        </div>
+        <p>Agrega aquí tus mejores proyectos. Para reclutadores, es mejor mostrar 3 proyectos sólidos que 10 incompletos.</p>
+      </div>
+
+      <div class="grid">
+        <article class="project">
+          <h3>Proyecto 1: Dashboard personal</h3>
+          <p>Una interfaz para visualizar datos, métricas o hábitos personales con componentes claros y diseño responsive.</p>
+          <div class="tags">
+            <span class="tag">JavaScript</span>
+            <span class="tag">CSS Grid</span>
+            <span class="tag">UI</span>
+          </div>
+          <div class="project-links">
+            <a href="#" aria-label="Ver demo del Proyecto 1">Demo</a>
+            <a href="#" aria-label="Ver código del Proyecto 1">Código</a>
+          </div>
+        </article>
+
+        <article class="project">
+          <h3>Proyecto 2: Landing page</h3>
+          <p>Página de presentación profesional enfocada en comunicación clara, rendimiento y experiencia móvil.</p>
+          <div class="tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">Responsive</span>
+          </div>
+          <div class="project-links">
+            <a href="#" aria-label="Ver demo del Proyecto 2">Demo</a>
+            <a href="#" aria-label="Ver código del Proyecto 2">Código</a>
+          </div>
+        </article>
+
+        <article class="project">
+          <h3>Proyecto 3: App interactiva</h3>
+          <p>Aplicación pequeña con interacción, estado y flujo de usuario pensado para resolver una tarea concreta.</p>
+          <div class="tags">
+            <span class="tag">JavaScript</span>
+            <span class="tag">DOM</span>
+            <span class="tag">UX</span>
+          </div>
+          <div class="project-links">
+            <a href="#" aria-label="Ver demo del Proyecto 3">Demo</a>
+            <a href="#" aria-label="Ver código del Proyecto 3">Código</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="habilidades" class="container">
+      <div class="section-intro">
+        <div>
+          <p class="eyebrow">Stack</p>
+          <h2>Habilidades</h2>
+        </div>
+        <p>Este bloque debe reflejar herramientas que realmente puedes defender en entrevista.</p>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Frontend</h3>
+          <p>HTML semántico, CSS responsive, JavaScript, accesibilidad básica y buenas prácticas de UI.</p>
+        </div>
+        <div class="card">
+          <h3>Herramientas</h3>
+          <p>Git, GitHub, GitHub Pages, despliegue estático, control de versiones y documentación de proyectos.</p>
+        </div>
+        <div class="card">
+          <h3>Producto</h3>
+          <p>Comunicación clara, estructura de información, enfoque en usuario y presentación profesional.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre-mi" class="container">
+      <div class="about">
+        <div class="card">
+          <p class="eyebrow">Sobre mí</p>
+          <h2>Aprendo construyendo.</h2>
+          <p>
+            Me gusta convertir ideas en proyectos visibles, ordenados y fáciles de entender. Este portafolio está pensado
+            para mostrar mi progreso, mi criterio técnico y mi capacidad de entregar resultados.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Qué puede evaluar un reclutador aquí</h3>
+          <ul class="list">
+            <li>Capacidad para publicar proyectos reales en internet.</li>
+            <li>Claridad para explicar qué problema resuelve cada proyecto.</li>
+            <li>Uso de GitHub como herramienta profesional.</li>
+            <li>Cuidado visual, responsive design y comunicación.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="container">
+      <div class="card">
+        <p class="eyebrow">Contacto</p>
+        <h2>Hablemos.</h2>
+        <p class="lead">
+          Puedes escribirme por correo o revisar mi trabajo en GitHub y LinkedIn.
+        </p>
+        <div class="buttons">
+          <a class="button primary" href="mailto:christianruiztel@gmail.com">christianruiztel@gmail.com</a>
+          <a class="button secondary" href="https://github.com/christianruiztel" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="button secondary" href="https://www.linkedin.com/in/REEMPLAZA-TU-USUARIO" target="_blank" rel="noreferrer">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © <span id="year"></span> Christian Ruiz Tellechea. Construido con HTML, CSS y GitHub Pages.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
