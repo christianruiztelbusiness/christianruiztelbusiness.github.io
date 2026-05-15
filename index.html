@@ -4,13 +4,17 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Christian Ruiz Tellechea | Senior Full-Stack & AI Engineer</title>
+
   <meta name="description" content="Portfolio of Christian Ruiz Tellechea, Senior Full-Stack & AI Engineer specializing in React, Node.js, TypeScript, Python, AWS, AI agents, RAG, LLM systems, and cloud-native architecture." />
   <meta name="author" content="Christian Ruiz Tellechea" />
+
   <meta property="og:title" content="Christian Ruiz Tellechea | Senior Full-Stack & AI Engineer" />
   <meta property="og:description" content="Full-stack, AI engineering, agentic workflows, cloud-native systems, and selected professional projects." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://christianruiztel.com" />
-  <link rel="canonical" href="https://christianruiztel.com" />
+  <meta property="og:url" content="https://christianruiztelbusiness.github.io" />
+
+  <link rel="canonical" href="https://christianruiztelbusiness.github.io" />
+
   <style>
     :root {
       --bg: #080d1c;
@@ -26,9 +30,13 @@
       --radius: 24px;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
@@ -41,7 +49,16 @@
       line-height: 1.6;
     }
 
-    a { color: inherit; text-decoration: none; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:focus-visible {
+      outline: 3px solid rgba(56, 189, 248, 0.8);
+      outline-offset: 4px;
+      border-radius: 12px;
+    }
 
     .container {
       width: min(1160px, calc(100% - 32px));
@@ -61,12 +78,14 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 18px;
       padding: 16px 0;
     }
 
     .brand {
       font-weight: 800;
       letter-spacing: -0.03em;
+      white-space: nowrap;
     }
 
     .nav-links {
@@ -74,9 +93,21 @@
       gap: 18px;
       color: var(--muted);
       font-size: 0.95rem;
+      align-items: center;
     }
 
-    .nav-links a:hover { color: var(--text); }
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-cta {
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text);
+      font-weight: 800;
+    }
 
     .hero {
       padding: 88px 0 48px;
@@ -95,7 +126,12 @@
       margin-bottom: 16px;
     }
 
-    h1, h2, h3, p { margin-top: 0; }
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
 
     h1 {
       font-size: clamp(2.55rem, 7vw, 5.45rem);
@@ -124,14 +160,23 @@
       margin-bottom: 28px;
     }
 
-    .card, .project, .hero-card, .cv-card {
+    .card,
+    .project,
+    .hero-card,
+    .cv-card,
+    .case-study {
       background: linear-gradient(180deg, var(--surface-strong), var(--surface));
       border: 1px solid var(--border);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
     }
 
-    .hero-card, .card, .cv-card { padding: 26px; }
+    .hero-card,
+    .card,
+    .cv-card,
+    .case-study {
+      padding: 26px;
+    }
 
     .status {
       display: inline-flex;
@@ -164,10 +209,13 @@
       border-radius: 999px;
       font-weight: 800;
       border: 1px solid var(--border);
-      transition: transform 160ms ease, background 160ms ease;
+      transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
     }
 
-    .button:hover { transform: translateY(-2px); }
+    .button:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255, 255, 255, 0.35);
+    }
 
     .primary {
       background: linear-gradient(135deg, var(--accent), var(--accent-2));
@@ -180,7 +228,10 @@
       color: var(--text);
     }
 
-    section { padding: 58px 0; }
+    section {
+      padding: 58px 0;
+      scroll-margin-top: 90px;
+    }
 
     .section-intro {
       display: flex;
@@ -273,7 +324,8 @@
       object-fit: cover;
       border-radius: 18px;
       border: 1px solid var(--border);
-      background: rgba(255,255,255,0.05);
+      background: rgba(255, 255, 255, 0.05);
+      display: block;
     }
 
     .image-placeholder {
@@ -288,9 +340,15 @@
       padding: 20px;
     }
 
-    .project-content { padding: 28px; }
+    .project-content {
+      padding: 28px;
+    }
 
-    .project-content p { color: var(--muted); }
+    .project-content p,
+    .card p,
+    .case-study p {
+      color: var(--muted);
+    }
 
     .project-meta {
       color: var(--accent);
@@ -311,6 +369,35 @@
       font-weight: 800;
     }
 
+    .project-links a:hover {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .case-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: -10px;
+      margin-bottom: 10px;
+    }
+
+    .case-study {
+      box-shadow: none;
+      background: rgba(255, 255, 255, 0.045);
+    }
+
+    .case-study h4 {
+      margin: 0 0 8px;
+      color: var(--text);
+      font-size: 0.95rem;
+    }
+
+    .case-study p {
+      margin-bottom: 0;
+      font-size: 0.95rem;
+    }
+
     .cv-layout {
       display: grid;
       grid-template-columns: 0.75fr 1.25fr;
@@ -329,8 +416,15 @@
       background: rgba(255, 255, 255, 0.045);
     }
 
-    .timeline-item p { color: var(--muted); margin-bottom: 0; }
-    .timeline-item small { color: var(--accent); font-weight: 800; }
+    .timeline-item p {
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+
+    .timeline-item small {
+      color: var(--accent);
+      font-weight: 800;
+    }
 
     .list {
       display: grid;
@@ -356,26 +450,47 @@
     }
 
     @media (max-width: 920px) {
-      .hero, .project, .cv-layout, .grid-3, .stats {
+      .hero,
+      .project,
+      .cv-layout,
+      .grid-3,
+      .stats,
+      .case-grid {
         grid-template-columns: 1fr;
       }
 
-      .project-media { border-right: 0; border-bottom: 1px solid var(--border); }
-      .section-intro { display: block; }
-      .nav-links { display: none; }
+      .project-media {
+        border-right: 0;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .section-intro {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      h1 {
+        letter-spacing: -0.06em;
+      }
     }
   </style>
 </head>
+
 <body>
   <header>
     <div class="container">
       <nav aria-label="Main navigation">
         <a class="brand" href="#top">Christian Ruiz Tellechea</a>
+
         <div class="nav-links">
           <a href="#projects">Projects</a>
           <a href="#skills">Skills</a>
           <a href="#cv">CV</a>
           <a href="#contact">Contact</a>
+          <a class="nav-cta" href="mailto:christianruiztel@gmail.com?subject=Senior%20Engineering%20Opportunity">Hire / Interview</a>
         </div>
       </nav>
     </div>
@@ -385,23 +500,32 @@
     <section class="container hero">
       <div>
         <p class="eyebrow">Senior Full-Stack & AI Engineer</p>
+
         <h1>I build production-ready web, cloud, and AI systems.</h1>
+
         <p class="lead">
           I am a Senior Full-Stack & AI Engineer based in Guadalajara, Mexico, with nearly 20 years of commercial software engineering experience across full-stack products, cloud-native platforms, distributed systems, and applied AI.
         </p>
+
         <div class="buttons">
           <a class="button primary" href="#projects">View Projects</a>
           <a class="button secondary" href="#cv">View CV</a>
-          <a class="button secondary" href="mailto:christianruiztel@gmail.com">Contact Me</a>
+          <a class="button secondary" href="mailto:christianruiztel@gmail.com?subject=Senior%20Engineering%20Opportunity">Contact Me</a>
         </div>
       </div>
 
       <aside class="hero-card" aria-label="Professional summary">
-        <div class="status"><span class="dot"></span>Available for client interviews</div>
+        <div class="status">
+          <span class="dot"></span>
+          Available for client interviews
+        </div>
+
         <h2>Profile</h2>
+
         <p class="lead" style="font-size: 1rem; margin-bottom: 20px;">
           Specialized in React, Node.js, TypeScript, Python, AWS, serverless systems, microservices, databases, API-first architecture, LLM integration, RAG, AI agents, voice AI, and agentic workflow orchestration.
         </p>
+
         <div class="tags">
           <span class="tag">React</span>
           <span class="tag">Node.js</span>
@@ -417,10 +541,25 @@
 
     <section class="container" aria-label="Key numbers">
       <div class="stats">
-        <div class="stat"><strong>20</strong><span>Years of commercial experience</span></div>
-        <div class="stat"><strong>AI</strong><span>LLM systems, RAG, agents, voice AI</span></div>
-        <div class="stat"><strong>AWS</strong><span>Serverless, microservices, cloud platforms</span></div>
-        <div class="stat"><strong>C1</strong><span>Advanced professional English</span></div>
+        <div class="stat">
+          <strong>20</strong>
+          <span>Years of commercial experience</span>
+        </div>
+
+        <div class="stat">
+          <strong>AI</strong>
+          <span>LLM systems, RAG, agents, voice AI</span>
+        </div>
+
+        <div class="stat">
+          <strong>AWS</strong>
+          <span>Serverless, microservices, cloud platforms</span>
+        </div>
+
+        <div class="stat">
+          <strong>C1</strong>
+          <span>Advanced professional English</span>
+        </div>
       </div>
     </section>
 
@@ -430,101 +569,269 @@
           <p class="eyebrow">Selected work</p>
           <h2>Projects</h2>
         </div>
-        <p>Each project is presented separately so recruiters can quickly understand the business problem, technical scope, and impact. Replace the image placeholders with screenshots when available.</p>
+
+        <p>
+          Each project is presented separately so recruiters can quickly understand the business problem, technical scope, and impact.
+        </p>
       </div>
 
       <div class="project-list">
-        <article class="project">
+        <article id="parent-lab" class="project">
           <div class="project-media">
-            <div class="image-placeholder">Add image:<br />parent-lab.png</div>
+            <img
+              src="assets/parent-lab.png?v=1"
+              alt="Parent Lab app mockup showing personalized parenting guidance, daily path, and family timeline screens"
+              loading="lazy"
+            />
           </div>
+
           <div class="project-content">
             <div class="project-meta">AI-Native Parenting App · Parent Lab · 2024</div>
+
             <h3>Personalized parenting guidance powered by multi-agent AI</h3>
+
             <p>
               Rebuilt a traditional parenting app into an AI-native product with personalized courses, pathways, daily sessions, podcasts, and conversational AI experiences based on family context, user interactions, lessons, chats, and behavioral patterns.
             </p>
+
             <p>
               Contributed to production-grade full-stack features, multi-agent personalization workflows, a Global Context Agent, AI-powered reflection flows, secure LLM access to internal product data, and evaluation frameworks for prompt and agent behavior.
             </p>
+
             <div class="tags">
-              <span class="tag">React</span><span class="tag">Next.js</span><span class="tag">Node.js</span><span class="tag">TypeScript</span><span class="tag">Python</span><span class="tag">AWS</span><span class="tag">PostgreSQL</span><span class="tag">LLMs</span><span class="tag">Multi-Agent Systems</span>
+              <span class="tag">React</span>
+              <span class="tag">Next.js</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">Python</span>
+              <span class="tag">AWS</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">LLMs</span>
+              <span class="tag">Multi-Agent Systems</span>
             </div>
+
             <div class="project-links">
-              <a href="#">Case Study</a>
-              <a href="#">Screenshots</a>
+              <a href="#parent-lab-details">Case Study</a>
+              <a href="assets/parent-lab.png" target="_blank" rel="noreferrer">Screenshot</a>
             </div>
           </div>
         </article>
 
-        <article class="project">
-          <div class="project-media">
-            <div class="image-placeholder">Add image:<br />agentic-workflow-platform.png</div>
+        <div id="parent-lab-details" class="case-grid">
+          <div class="case-study">
+            <h4>Problem</h4>
+            <p>
+              Move from static parenting content to contextual guidance that adapts to a family’s goals, history, lessons, chats, and behavioral signals.
+            </p>
           </div>
+
+          <div class="case-study">
+            <h4>Contribution</h4>
+            <p>
+              Delivered full-stack features, AI personalization workflows, context agents, LLM data access patterns, and prompt behavior evaluation.
+            </p>
+          </div>
+
+          <div class="case-study">
+            <h4>Impact</h4>
+            <p>
+              Helped create an AI-native experience with personalized pathways, daily sessions, reflections, and conversational support.
+            </p>
+          </div>
+        </div>
+
+        <article id="agentic-workflow-platform" class="project">
+          <div class="project-media">
+            <div class="image-placeholder">
+              Add image:<br />
+              agentic-workflow-platform.png
+            </div>
+          </div>
+
           <div class="project-content">
             <div class="project-meta">Agentic Workflow Platform · NDA · 2024–Present</div>
+
             <h3>AI agents embedded inside controlled business workflows</h3>
+
             <p>
               Designed and built an agentic workflow automation platform for premium clinics, supporting the journey from inbound lead to patient evaluation, follow-up, appointment scheduling, payment coordination, and treatment start.
             </p>
+
             <p>
               Built multi-channel AI workflows across WhatsApp, calls, email, chat, forms, CRMs, calendars, internal APIs, payment flows, spreadsheets, and support platforms with human-in-the-loop handoffs, observability, evaluation, and reusable industry-specific components.
             </p>
+
             <div class="tags">
-              <span class="tag">Python</span><span class="tag">React</span><span class="tag">Flutter</span><span class="tag">Node.js</span><span class="tag">AWS</span><span class="tag">LangChain</span><span class="tag">LangGraph</span><span class="tag">Pinecone</span><span class="tag">RAG</span><span class="tag">Voice AI</span><span class="tag">OpenAI Realtime</span>
+              <span class="tag">Python</span>
+              <span class="tag">React</span>
+              <span class="tag">Flutter</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">AWS</span>
+              <span class="tag">LangChain</span>
+              <span class="tag">LangGraph</span>
+              <span class="tag">Pinecone</span>
+              <span class="tag">RAG</span>
+              <span class="tag">Voice AI</span>
+              <span class="tag">OpenAI Realtime</span>
             </div>
+
             <div class="project-links">
-              <a href="#">Architecture Notes</a>
-              <a href="#">Workflow Overview</a>
+              <a href="#agentic-workflow-platform-details">Architecture Notes</a>
+              <a href="#contact">Request Private Demo</a>
             </div>
           </div>
         </article>
 
-        <article class="project">
-          <div class="project-media">
-            <div class="image-placeholder">Add image:<br />ai-engineering-platform.png</div>
+        <div id="agentic-workflow-platform-details" class="case-grid">
+          <div class="case-study">
+            <h4>Problem</h4>
+            <p>
+              Automate high-touch patient acquisition workflows while keeping control, traceability, and human escalation.
+            </p>
           </div>
+
+          <div class="case-study">
+            <h4>Contribution</h4>
+            <p>
+              Designed agent orchestration, tool calling, RAG, CRM/calendar/payment integrations, voice AI, and observability patterns.
+            </p>
+          </div>
+
+          <div class="case-study">
+            <h4>Impact</h4>
+            <p>
+              Built reusable workflow components for lead qualification, scheduling, follow-up, payment coordination, and operations handoff.
+            </p>
+          </div>
+        </div>
+
+        <article id="ai-engineering-platform" class="project">
+          <div class="project-media">
+            <div class="image-placeholder">
+              Add image:<br />
+              ai-engineering-platform.png
+            </div>
+          </div>
+
           <div class="project-content">
             <div class="project-meta">AI Platform for Software Engineers · NDA · 2022–2024</div>
+
             <h3>Private code-focused LLM platform for engineering teams</h3>
+
             <p>
               Worked as a founding engineer on a developer-facing AI platform using fine-tuned code-focused LLMs deployed locally or within private company infrastructure.
             </p>
+
             <p>
               Covered the full LLM lifecycle: dataset collection, cleaning, labeling, fine-tuning, evaluation, quantization, local inference, product integration, CI/CD, and versioning for application code, prompts, datasets, and evaluation scripts.
             </p>
+
             <div class="tags">
-              <span class="tag">Python</span><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">TypeScript</span><span class="tag">Hugging Face</span><span class="tag">AWS SageMaker</span><span class="tag">QLoRA</span><span class="tag">GGUF</span><span class="tag">llama.cpp</span><span class="tag">MLOps</span>
+              <span class="tag">Python</span>
+              <span class="tag">React</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">Hugging Face</span>
+              <span class="tag">AWS SageMaker</span>
+              <span class="tag">QLoRA</span>
+              <span class="tag">GGUF</span>
+              <span class="tag">llama.cpp</span>
+              <span class="tag">MLOps</span>
             </div>
+
             <div class="project-links">
-              <a href="#">Technical Summary</a>
-              <a href="#">Model Lifecycle</a>
+              <a href="#ai-engineering-platform-details">Technical Summary</a>
+              <a href="#contact">Discuss Experience</a>
             </div>
           </div>
         </article>
 
-        <article class="project">
-          <div class="project-media">
-            <div class="image-placeholder">Add image:<br />transport-tracking-platform.png</div>
+        <div id="ai-engineering-platform-details" class="case-grid">
+          <div class="case-study">
+            <h4>Problem</h4>
+            <p>
+              Enable companies to use code-focused LLMs privately with control over model behavior, deployment, and internal code security.
+            </p>
           </div>
+
+          <div class="case-study">
+            <h4>Contribution</h4>
+            <p>
+              Worked across dataset pipelines, fine-tuning, evaluation, quantization, local inference, product integration, and CI/CD.
+            </p>
+          </div>
+
+          <div class="case-study">
+            <h4>Impact</h4>
+            <p>
+              Supported private engineering assistant workflows suitable for internal infrastructure and code-sensitive environments.
+            </p>
+          </div>
+        </div>
+
+        <article id="transport-tracking-platform" class="project">
+          <div class="project-media">
+            <div class="image-placeholder">
+              Add image:<br />
+              transport-tracking-platform.png
+            </div>
+          </div>
+
           <div class="project-content">
             <div class="project-meta">Real-Time Transport Tracking Platform · GRS Solutions · 2016–2019</div>
+
             <h3>GPS-based logistics visibility platform with web and mobile apps</h3>
+
             <p>
               Led and built a real-time transport tracking platform for monitoring client transports with GPS location updates, status visibility, checkpoints, photos, incident reporting, analytics, and mobile workflows for custodians.
             </p>
+
             <p>
               Integrated AWS services for storage, synchronization, streaming, analytics, authentication, authorization, backend management, and scalable deployment using serverless patterns, Docker, and AWS Fargate.
             </p>
+
             <div class="tags">
-              <span class="tag">React</span><span class="tag">React Native</span><span class="tag">Node.js</span><span class="tag">AWS</span><span class="tag">DynamoDB</span><span class="tag">S3</span><span class="tag">Lambda</span><span class="tag">API Gateway</span><span class="tag">Amplify</span><span class="tag">Docker</span>
+              <span class="tag">React</span>
+              <span class="tag">React Native</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">AWS</span>
+              <span class="tag">DynamoDB</span>
+              <span class="tag">S3</span>
+              <span class="tag">Lambda</span>
+              <span class="tag">API Gateway</span>
+              <span class="tag">Amplify</span>
+              <span class="tag">Docker</span>
             </div>
+
             <div class="project-links">
-              <a href="#">Platform Overview</a>
-              <a href="#">Screenshots</a>
+              <a href="#transport-tracking-platform-details">Platform Overview</a>
+              <a href="#contact">Request Details</a>
             </div>
           </div>
         </article>
+
+        <div id="transport-tracking-platform-details" class="case-grid">
+          <div class="case-study">
+            <h4>Problem</h4>
+            <p>
+              Give operations teams real-time visibility into transport status, route progress, incidents, checkpoints, and evidence.
+            </p>
+          </div>
+
+          <div class="case-study">
+            <h4>Contribution</h4>
+            <p>
+              Led web/mobile development, GPS workflows, serverless backend services, AWS integrations, data flows, and deployment.
+            </p>
+          </div>
+
+          <div class="case-study">
+            <h4>Impact</h4>
+            <p>
+              Delivered an operational tracking platform with mobile field workflows, photos, checkpoints, analytics, and live status visibility.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -534,21 +841,32 @@
           <p class="eyebrow">Technical focus</p>
           <h2>Skills</h2>
         </div>
-        <p>A concise snapshot of the technologies and capabilities I can discuss in depth during interviews.</p>
+
+        <p>
+          A concise snapshot of the technologies and capabilities I can discuss in depth during interviews.
+        </p>
       </div>
 
       <div class="grid-3">
         <div class="card">
           <h3>Full-Stack Engineering</h3>
-          <p>React, Next.js, React Native, Node.js, TypeScript, JavaScript, Python, Java, REST APIs, GraphQL, authentication, API design, and backend services.</p>
+          <p>
+            React, Next.js, React Native, Node.js, TypeScript, JavaScript, Python, Java, REST APIs, GraphQL, authentication, API design, and backend services.
+          </p>
         </div>
+
         <div class="card">
           <h3>Cloud & Architecture</h3>
-          <p>AWS, Lambda, DynamoDB, S3, API Gateway, Amplify, Kinesis, Docker, Fargate, CI/CD, serverless architecture, microservices, distributed systems, and event-driven workflows.</p>
+          <p>
+            AWS, Lambda, DynamoDB, S3, API Gateway, Amplify, Kinesis, Docker, Fargate, CI/CD, serverless architecture, microservices, distributed systems, and event-driven workflows.
+          </p>
         </div>
+
         <div class="card">
           <h3>AI Engineering</h3>
-          <p>LLM integration, RAG, prompt engineering, tool/function calling, LangChain, LangGraph, Pinecone, AI agents, voice AI, OpenAI, Anthropic, Gemini, evaluation, telemetry, and MLOps.</p>
+          <p>
+            LLM integration, RAG, prompt engineering, tool/function calling, LangChain, LangGraph, Pinecone, AI agents, voice AI, OpenAI, Anthropic, Gemini, evaluation, telemetry, and MLOps.
+          </p>
         </div>
       </div>
     </section>
@@ -559,12 +877,16 @@
           <p class="eyebrow">CV</p>
           <h2>Professional background</h2>
         </div>
-        <p>Recruiter-friendly summary of my experience, technical background, education, and availability.</p>
+
+        <p>
+          Recruiter-friendly summary of my experience, technical background, education, and availability.
+        </p>
       </div>
 
       <div class="cv-layout">
         <aside class="cv-card">
           <h3>Contact & Availability</h3>
+
           <ul class="list">
             <li>Guadalajara, Jalisco, Mexico</li>
             <li>Time Zone: GMT-6 / America/Mexico_City</li>
@@ -574,9 +896,10 @@
             <li>Preferred start date: 2 weeks</li>
             <li>Languages: Spanish native, English advanced / C1</li>
           </ul>
+
           <div class="buttons" style="margin-top: 18px;">
-            <a class="button primary" href="mailto:christianruiztel@gmail.com">Email Me</a>
-            <a class="button secondary" href="#">Download CV</a>
+            <a class="button primary" href="mailto:christianruiztel@gmail.com?subject=Senior%20Engineering%20Opportunity">Email Me</a>
+            <a class="button secondary" href="assets/christian-ruiz-tellechea-cv.pdf" target="_blank" rel="noreferrer">Download CV</a>
           </div>
         </aside>
 
@@ -584,37 +907,57 @@
           <div class="timeline-item">
             <small>February 2024 – Present</small>
             <h3>Senior Full-Stack & AI Engineer / AI Workflow Architect · Agentic Workflow Platform</h3>
-            <p>Agentic workflow automation platform with multi-channel agents, RAG, tool calling, human-in-the-loop processes, observability, evaluation frameworks, and reusable business workflow components.</p>
+            <p>
+              Agentic workflow automation platform with multi-channel agents, RAG, tool calling, human-in-the-loop processes, observability, evaluation frameworks, and reusable business workflow components.
+            </p>
           </div>
+
           <div class="timeline-item">
             <small>February 2024 – December 2024</small>
             <h3>Senior Full-Stack & AI Engineer · Parent Lab</h3>
-            <p>AI-native parenting app with personalized guidance, multi-agent AI, conversational experiences, production full-stack features, cloud services, and evaluation frameworks.</p>
+            <p>
+              AI-native parenting app with personalized guidance, multi-agent AI, conversational experiences, production full-stack features, cloud services, and evaluation frameworks.
+            </p>
           </div>
+
           <div class="timeline-item">
             <small>February 2022 – January 2024</small>
             <h3>Senior AI Engineer / Founding Engineer · AI Platform for Software Engineers</h3>
-            <p>Private code-focused LLM platform covering dataset preparation, fine-tuning, evaluation, quantization, local inference, product integration, and MLOps practices.</p>
+            <p>
+              Private code-focused LLM platform covering dataset preparation, fine-tuning, evaluation, quantization, local inference, product integration, and MLOps practices.
+            </p>
           </div>
+
           <div class="timeline-item">
             <small>December 2020 – December 2021</small>
             <h3>Technical Lead & Full-Stack Engineer · Infobip / Amdocs</h3>
-            <p>Scalable web and backend systems using React, Node.js, Python, PostgreSQL, AWS, microservices, and serverless architecture patterns.</p>
+            <p>
+              Scalable web and backend systems using React, Node.js, Python, PostgreSQL, AWS, microservices, and serverless architecture patterns.
+            </p>
           </div>
+
           <div class="timeline-item">
             <small>January 2016 – October 2019</small>
             <h3>Head of Engineering / Founding Engineer · GRS Solutions</h3>
-            <p>Real-time transport tracking platform with web, mobile, GPS workflows, AWS services, serverless architecture, Docker, and CI/CD pipelines.</p>
+            <p>
+              Real-time transport tracking platform with web, mobile, GPS workflows, AWS services, serverless architecture, Docker, and CI/CD pipelines.
+            </p>
           </div>
+
           <div class="timeline-item">
             <small>January 2012 – October 2016</small>
             <h3>Engineering Manager & Full-Stack Developer · Digital Data</h3>
-            <p>High-traffic digital platform with full-stack web applications, dashboards, CMS, microservices, AWS, React, Java, .NET, C#, and SQL Server.</p>
+            <p>
+              High-traffic digital platform with full-stack web applications, dashboards, CMS, microservices, AWS, React, Java, .NET, C#, and SQL Server.
+            </p>
           </div>
+
           <div class="timeline-item">
             <small>2002 – 2006</small>
             <h3>Bachelor's Degree in Software Engineering / Computer Systems Engineering</h3>
-            <p>Universidad del Valle de México.</p>
+            <p>
+              Universidad del Valle de México.
+            </p>
           </div>
         </div>
       </div>
@@ -623,14 +966,17 @@
     <section id="contact" class="container">
       <div class="card">
         <p class="eyebrow">Contact</p>
+
         <h2>Let’s build something useful.</h2>
+
         <p class="lead">
           I am open to full-time senior engineering roles, AI engineering opportunities, and technical conversations around full-stack platforms, applied AI, and cloud-native architecture.
         </p>
+
         <div class="buttons">
-          <a class="button primary" href="mailto:christianruiztel@gmail.com">christianruiztel@gmail.com</a>
+          <a class="button primary" href="mailto:christianruiztel@gmail.com?subject=Senior%20Engineering%20Opportunity">christianruiztel@gmail.com</a>
           <a class="button secondary" href="https://github.com/christianruiztel" target="_blank" rel="noreferrer">GitHub</a>
-          <a class="button secondary" href="https://www.linkedin.com/in/REPLACE-WITH-YOUR-LINKEDIN" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="button secondary" href="https://www.linkedin.com/in/christianruiztel" target="_blank" rel="noreferrer">LinkedIn</a>
         </div>
       </div>
     </section>
